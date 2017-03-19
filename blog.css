@@ -75,6 +75,9 @@ h6, .h6 {
   color: black;
   font-family: 'Exo', sans-serif;
 }
+
+
+
 .blog-description {
   font-size: 20px;
   color: black;
@@ -119,8 +122,28 @@ h6, .h6 {
 
 .sidebar-icon{
   display: block;
-  padding: 10px;
+  padding: 8px;
   margin: auto;
+}
+
+@media (max-width: 767px) {
+    .sidebar-icon-group{
+    
+    padding: none;
+    
+    margin-left: calc(50% - 116px);
+    
+
+  }
+}
+
+@media (max-width: 767px) {
+    .sidebar-icon{
+  
+      
+    display: inline;
+
+  }
 }
 
 .profilepic {
@@ -146,10 +169,13 @@ h6, .h6 {
 .blog-post-meta {
   margin-bottom: 20px;
   color: black;
-
-
-
 }
+
+#blog-post-exo-font {
+  font-family: 'Exo', sans-serif;
+}
+
+
 
 
 /*
