@@ -12,12 +12,14 @@
     <title>ctrlzzz</title>
 
     <!-- Bootstrap core CSS -->
+
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles -->
     <link href="blog.css" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="icon16.png" sizes="16x16">
@@ -27,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
 
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,17 +40,29 @@
 
   <body>
 
-    <div class="blog-masthead">
+   <!-- Static masthead -->
+    <nav class="navbar navbar-masthead navbar-default navbar-static-top navbar-custom">
       <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item" href="#">Articles</a>
-          <a class="blog-nav-item" href="#">Projects</a>
-          <a class="blog-nav-item" href="#">Profile</a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           
-          <a class="blog-nav-item" href="#">Contact</a>
-        </nav>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="navbar-item"><a href="#">Articles</a></li>
+            <li class="navbar-item"><a href="#">About</a></li>
+            <li class="navbar-item"><a href="#">Contact</a></li>
+            
+          </ul>
+          
+        </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>
 
     <div class="container">
 
@@ -63,7 +77,7 @@
 
           <div class="blog-post">
             <h2 class="blog-post-title">Welcome to <b>ctrl</b><sup>zzz</sup>!</h2>
-            <p class="blog-post-meta">March 17, 2017
+            <p class="blog-post-meta">March 17, 2017</p>
 
 
             <p>Welcome! This is a new site/blog for tech types. Here you can find all things related to web development, software, the internet, and tech. I'll be writing about projects I'm currently working on as well as cool things I've stumbled upon that have helped me in my career as a software developer as well as in my personal life as a professional nerd.</p>
@@ -77,9 +91,9 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <img class="profilepic" src="profile.png">
+            <a href="http://www.ctrlzzz.com"><img class="profilepic" src="profile.png"></a>
             <h3 class="sidebar-title">Chris Lapidas</h3>
-            <h5 class="sidebar-subtitle"> Developer & Blogger</h5>
+            <h5 class="sidebar-subtitle">Developer</h5>
             <a href="https://github.com/chrislapidas"><img class="sidebar-icon" src="icongit.png"></a>
             <a href="https://github.com/chrislapidas"><img class="sidebar-icon" src="iconfb.png"></a>
             <a href="https://github.com/chrislapidas"><img class="sidebar-icon" src="iconlinked.png"></a>
@@ -91,7 +105,7 @@
           <div class="sidebar-module">
             <h4>Recent</h4>
             <ul>
-              <a href="ctrlzz.com">Welcome to ctrlzzz!</a>
+              <a href="http://www.ctrlzzz.com">Welcome to ctrlzzz!</a>
 
             </ul>
             
@@ -114,8 +128,18 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-93988624-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
   </body>
 </html>
