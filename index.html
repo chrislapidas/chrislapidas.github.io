@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
 
-    <title>POST with Java - javaComments</title>
+    <title>javaComments</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -68,9 +68,7 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title">//<b>javaComments</b></h1>
-
-
+        <h1 class="blog-title">//<a href="www.javaComments.com"><b>javaComments</b></a></h1>
       </div>
 
       <div class="row">
@@ -87,7 +85,7 @@
             <br>
             <p>For this example, I'll be using the Google Flights API which is called <a href="https://developers.google.com/qpx-express/">QPX Express</a>. The first thing we need to do is set up an API Key from <a href="https://console.developers.google.com">Google API Console</a>. Register your new program and they will provide you with a key. You can also get keys here for all the other cool APIs Google offers. Next we have to set up our Java file to make a POST request.</p>
             <br>
-            <pre><code>//setup HttpsURLConnection for POST request
+            <pre>//setup HttpsURLConnection for POST request
 String url = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=API_KEY";
 URL urlObj = new URL(url);
 HttpsURLConnection con = (HttpsURLConnection)urlObj.openConnection();
@@ -98,11 +96,11 @@ System.out.println("Attempting connection...");
 con.setRequestMethod("POST");
 con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 con.setDoInput(true);
-con.setDoOutput(true);</code></pre>
+con.setDoOutput(true);</pre>
             <br>
             <p>Use your API key where it says API_KEY. In this case, we are using HttpsURLConnection (as opposed to HttpURLConnection) because the url of the API we are using is HTTPS secured. Next we will setup a text file to send for the POST request and send it.</p>
             <br>
-            <pre><code>//create json input from .txt file for post
+            <pre>//create json input from .txt file for post
 InputStream jsonTxt = new FileInputStream("jsonIn.txt");
 JsonReader jReader = Json.createReader(jsonTxt);
 JsonObject jsonObj = jReader.readObject();
@@ -117,12 +115,12 @@ wr.close();
 //200 is a normal response
 int responseCode = con.getResponseCode();
 System.out.println("\nSending 'POST' request to URL : " + url);
-System.out.println("Response Code : " + responseCode);</code></pre>
+System.out.println("Response Code : " + responseCode);</pre>
 
             <br>
             <p>Here I decided to store my input for the POST request in a separate text file in the same directory as the Java files. <a href="https://developers.google.com/qpx-express/">QPX Express</a> specifies how they want the input to look. You'll need to put the specifics of your request into JSON format (Javascript Object Notation) and it will look something like this...</p>
             <br>
-            <pre><code>{
+            <pre>{
   "request": {
     "slice": [
       {
@@ -142,14 +140,14 @@ System.out.println("Response Code : " + responseCode);</code></pre>
     "solutions": 1,
     "refundable": false
   }
-}</code></pre>
+}</pre>
           <br>
           <p>There are lots of specifics you can include in your request if you're looking for a specific departure time range, number of passengers, ect. Again, check <a href="https://developers.google.com/qpx-express/">QPX Express</a> for details. After the request is sent, we can print the <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP response code</a> to the console to make sure the connection worked. </p>
           <br>
           <p>Next we will grab the response from the POST request and store it in a .txt file, then read that back into a JSON Object.</p>
           <br>
 
-          <pre><code>//buffered reader to receive response from POST request
+          <pre>//buffered reader to receive response from POST request
 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"));
 String inputLine;
 StringBuffer response = new StringBuffer();
@@ -168,13 +166,13 @@ bwr.close();
 
 //put text file into json obj
 InputStream jsonTxtResponse = new FileInputStream("jsonOutput.txt");
-JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</code></pre>
+JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</pre>
             <br>
             <p>From here we have a JsonObject which we can use to get the details of the response. In this case, we'll need to use the getJsonObject() and getJsonArray() methods to traverse through the JsonObject and then use getJsonString() to get the info which can get a bit messy. I would recommend putting all these details into their own class and using setters and getters for all the JsonObject details. </p>
             <br>
             <p>If we wanted to get the sale price of a flight, we could traverse down through the JSON Object with a method like this...</p>
             <br>
-            <pre><code>public class PostResponse {
+            <pre>public class PostResponse {
 
   private JsonObject myJsonResponse;
   private JsonArray tripOptionArray;
@@ -191,7 +189,7 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</c
     JsonString saleJsonString = tripOption.getJsonString("saleTotal");
     return saleJsonString.toString().substring(4, 10);
   }
-}</code></pre>
+}</pre>
 
           <br>
           <p>Here I decided to set a JsonArray variable called tripOptionArray because I knew I would be drilling down into this array multiple times with more methods and I didn't want to keep repeating the code to do it. The constructor sets the tripOptionArray variable.</p>
@@ -238,7 +236,6 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</c
 
     <footer class="blog-footer">
       <p>&#9400; <a href="javacomments.com">javaComments.com</a>, All rights reserved.</p>
-    
         <a href="#">Back to top</a>
       </p>
     </footer>
