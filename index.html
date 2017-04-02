@@ -7,14 +7,14 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    
 
-    <title>POST with Java - ctrlzzz</title>
+
+    <title>POST with Java - javaComments</title>
 
     <!-- Bootstrap core CSS -->
 
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -50,7 +50,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          
+
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -58,9 +58,9 @@
             <li class="navbar-item"><a href="articles.html">Articles</a></li>
             <li class="navbar-item"><a href="about.html">About</a></li>
             <li class="navbar-item"><a href="contact.html">Contact</a></li>
-            
+
           </ul>
-          
+
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -68,8 +68,9 @@
     <div class="container">
 
       <div class="blog-header">
-        <h1 class="blog-title"><b>ctrl</b><i><sup>zzz</sup></i></h1>
-        <p class="lead blog-description">//idle comments</p>
+        <h1 class="blog-title">//<b>javaComments</b></h1>
+
+
       </div>
 
       <div class="row">
@@ -90,7 +91,7 @@
 String url = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=API_KEY";
 URL urlObj = new URL(url);
 HttpsURLConnection con = (HttpsURLConnection)urlObj.openConnection();
-    
+
 System.out.println("Attempting connection...");
 
 //add request header
@@ -105,7 +106,7 @@ con.setDoOutput(true);</code></pre>
 InputStream jsonTxt = new FileInputStream("jsonIn.txt");
 JsonReader jReader = Json.createReader(jsonTxt);
 JsonObject jsonObj = jReader.readObject();
-    
+
 //send post request
 DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 wr.writeBytes(jsonObj.toString());
@@ -130,7 +131,7 @@ System.out.println("Response Code : " + responseCode);</code></pre>
         "date": "2017-07-18"
       },
       {
-        "origin": "LAX", 
+        "origin": "LAX",
         "destination": "BOS",
         "date": "2017-07-25"
       }
@@ -158,13 +159,13 @@ while ((inputLine = in.readLine()) != null) {
   response.append(inputLine);
 }
 in.close();
-    
+
 //create file to write string response to
 BufferedWriter bwr = new BufferedWriter(new FileWriter(new File("jsonOutput.txt")));
 bwr.write(response.toString());
 bwr.flush();
 bwr.close();
-    
+
 //put text file into json obj
 InputStream jsonTxtResponse = new FileInputStream("jsonOutput.txt");
 JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</code></pre>
@@ -174,16 +175,16 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</c
             <p>If we wanted to get the sale price of a flight, we could traverse down through the JSON Object with a method like this...</p>
             <br>
             <pre><code>public class PostResponse {
-  
+
   private JsonObject myJsonResponse;
   private JsonArray tripOptionArray;
-  
+
   //constructor
   public PostResponse(JsonObject jsonSetter){
     myJsonResponse = jsonSetter;
     tripOptionArray = myJsonResponse.getJsonObject("trips").getJsonArray("tripOption");
   }
-  
+
   //traverses json array and returns sale price for flight
   public String getSaleTotal(int indexPos){
     JsonObject tripOption = tripOptionArray.getJsonObject(indexPos);
@@ -197,7 +198,7 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</c
           <br>
           <p>As you can see, getting through the JsonObjects and JsonArrays gets a bit messy without using any other external libraries, but keeping this code on it's own in a separate class will keep you/others from having to worry about it. The getSaleTotal(int indexPos) method takes in an int which specifies which flight you are querying. If you want to get the sale price from the first flight, (you can request multiple flights in your POST request,) then you use 0.</p>
           <br>
-          <p>Now that we can grab the details of the JSON response, we can do whatever we want with them whether that's store them in a database or put them up on a website. If you're curious about whether a certain company/organization has an API, just google their name along with API and see what comes up. There are lots of them out there.</p>
+          <p>Now that we can grab the details of the JSON response, we can do whatever we want with them whether that's store them in a database or put them up on a web app. If you're curious about whether a certain company/organization has an API, just google their name along with API and see what comes up. There are lots of them out there.</p>
 
 
           </div><!-- /.blog-post -->
@@ -208,7 +209,7 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</c
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <a href="http://www.ctrlzzz.com"><img class="profilepic" src="pictures/profile.png"></a>
+            <a href="http://www.javacomments.com"><img class="profilepic" src="pictures/profile.png"></a>
             <h3 class="sidebar-title">Chris Lapidas</h3>
             <h5 class="sidebar-subtitle">Developer</h5>
 
@@ -220,14 +221,14 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</c
             </div>
 
           </div>
-          
+
           <div class="sidebar-module">
             <h4>Recent</h4>
             <ul>
               <a href="postrequestjava.html">POST Request with Java</a><br>
-              <a href="welcome.html">Welcome to ctrlzzz!</a>
+              <a href="welcome.html">Welcome to javaComments!</a>
             </ul>
-            
+
           </div>
         </div><!-- /.blog-sidebar -->
 
@@ -236,7 +237,8 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</c
     </div><!-- /.container -->
 
     <footer class="blog-footer">
-      <p>Software and internet things and stuff.<p>
+      <p>&#9400; <a href="javacomments.com">javaComments.com</a>, All rights reserved.</p>
+    
         <a href="#">Back to top</a>
       </p>
     </footer>
