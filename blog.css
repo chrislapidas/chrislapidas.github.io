@@ -55,6 +55,29 @@ h6, .h6 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+@media screen and (max-width: 768px) {
+  .blog-header > h1 {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .blog-header > h1 {
+    font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .blog-header > h1 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 210px) {
+  .blog-header > h1 {
+    font-size: 18px;
+  }
+}
 
 .blog-title {
   margin-top: 30px;
@@ -64,6 +87,8 @@ h6, .h6 {
   color: black;
   font-family: 'Exo', sans-serif;
 }
+
+
 
 .blog-title > a {
   color: black;
@@ -159,6 +184,13 @@ h6, .h6 {
   font-family: 'Assistant', sans-serif;
 
 }
+
+@media screen and (max-width: 300px) {
+  .blog-post-title {
+    font-size: 28px;
+  }
+}
+
 .blog-post-meta {
   margin-bottom: 20px;
   color: black;
