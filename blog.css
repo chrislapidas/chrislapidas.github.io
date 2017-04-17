@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Assistant', sans-serif;
-  background-color: #f2f2f2;
+  background-color: none;
 }
 
 h1, .h1,
@@ -29,6 +29,7 @@ h6, .h6 {
     width: 970px;
   }
 }
+
 
 /* Nav links */
 .navbar-default{
@@ -55,40 +56,21 @@ h6, .h6 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-@media screen and (max-width: 768px) {
-  .blog-header > h1 {
-    font-size: 45px;
-  }
-}
 
-@media screen and (max-width: 400px) {
-  .blog-header > h1 {
-    font-size: 34px;
-  }
-}
-
-@media screen and (max-width: 300px) {
-  .blog-header > h1 {
-    font-size: 24px;
-  }
-}
-
-@media screen and (max-width: 210px) {
-  .blog-header > h1 {
-    font-size: 18px;
-  }
-}
 
 .blog-title {
   margin-top: 30px;
   margin-bottom: 5px;
-  font-size: 60px;
+  font-size: 150px;
   font-weight: medium;
   color: black;
-  font-family: 'Exo', sans-serif;
+  font-family: 'Oleo Script', cursive;
 }
 
-
+.logo {
+  width: 50%;
+  padding-top: 10px;
+}
 
 .blog-title > a {
   color: black;
@@ -146,6 +128,9 @@ h6, .h6 {
   margin: auto;
 }
 
+.logo {
+  margin-top: 10px;
+}
 @media (max-width: 767px) {
     .sidebar-icon-group{
 
@@ -154,12 +139,27 @@ h6, .h6 {
     margin-left: calc(50% - 116px);
 
   }
-}
 
-@media (max-width: 767px) {
-    .sidebar-icon{
+  .sidebar-icon{
     display: inline;
   }
+
+  .logo {
+    width: 60%;
+  }
+}
+
+@media (max-width: 530px) {
+  .logo {
+    width: 75%;
+  }
+
+}
+@media (max-width: 400px) {
+  .logo {
+    width: auto;
+  }
+
 }
 
 .profilepic {
