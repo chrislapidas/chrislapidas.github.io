@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>JS Tutorial - Web Undefined</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="blog.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="icon16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="icon32.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+
+    <script>
+        var luckyNumber = prompt('What is your lucky number?',''); luckyNumber = parseInt(luckyNumber);
+        if (isNaN(luckyNumber)) {
+          luckyNumber = prompt('Please, tell me your lucky number.','');
+        }
+
+        function printToday() {
+          var today = new Date();
+          document.write(today.toDateString());
+        }
+
+        var score = 0;
+        var questions = [
+          ['How many moons does Earth have?', 1],
+          ['How many moons does Saturn have?',31],
+          ['How many moons does Venus have?', 0]
+        ];
+
+        for (var i=0; i<questions.length; i++) {
+          askQuestion(questions[i]);
+        }
+
+        function askQuestion(question) {
+
+          var answer = prompt(question[0],'');
+
+          if (answer == question[1]) {
+            alert('Correct!');
+            score++;
+         } else {
+          alert('Sorry. The correct answer is ' + question[1]);
+         }
+       }
+    </script>
+
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+   <!-- Static masthead -->
+    <nav class="navbar navbar-masthead navbar-default navbar-static-top navbar-custom">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="navbar-item"><a href="index.html">Home</a></li>
+            <li class="navbar-item"><a href="articles.html">Articles</a></li>
+            <li class="navbar-item"><a href="about.html">About</a></li>
+            <li class="navbar-item"><a href="contact.html">Contact</a></li>
+
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <a href="http://www.webundefined.com"><img src="logo.png" class="img-responsive logo"></a>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+          <br>
+            <h3>Using Conditional Statements</h3>
+
+            <script>
+              if (luckyNumber == 7 ) {
+                document.write("<p>Hey, 7 is my lucky number too!</p>");
+              } else if (luckyNumber == 13 || luckyNumber == 24) { document.write("<p>Wooh. " + luckyNumber + "? That's an unlucky number!<p>");
+              } else {
+                document.write("<p>The number " + luckyNumber + " is lucky for you!</p>");
+              }
+            </script>
+
+            <br>
+            <h3>Mini-Tutorial</h3>
+
+            <p>Today is <strong>
+            <script>
+              printToday();
+            </script>
+            </strong></p>
+
+            <br>
+
+            <h3>A Simple Quiz</h3>
+
+            <script>
+            var message = 'You got ' + score;
+            message += ' out of ' + questions.length;
+            message += ' questions correct.';
+            document.write('<p>' + message + '</p>');
+            </script>
+
+
+
+          </div><!-- /.blog-post -->
+
+
+
+        </div><!-- /.blog-main -->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-93988624-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
