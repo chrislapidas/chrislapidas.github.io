@@ -29,6 +29,12 @@
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--- custom JS --->
+
+
+
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
@@ -210,7 +216,7 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</p
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <a href="about.html"><img class="profilepic" src="pictures/profile.png"></a>
+            <a href="about.html"><img class="profilepic" id="profilepic" src="pictures/profile.png"></a>
             <h3 class="sidebar-title">Chris Lapidas</h3>
             <h5 class="sidebar-subtitle">Developer</h5>
 
@@ -262,5 +268,6 @@ JsonObject jsonObjResponse = Json.createReader(jsonTxtResponse).readObject();</p
         ga('create', 'UA-93988624-1', 'auto');
         ga('send', 'pageview');
     </script>
+    <script src="js/javascript.js"></script>
   </body>
 </html>
