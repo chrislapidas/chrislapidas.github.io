@@ -1,0 +1,7 @@
+.ui-menu {
+  width: 10em;
+}
+
+.ui-menu .ui-menu {
+  width: 100%;
+}
